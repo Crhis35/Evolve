@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
   height: 10rem;
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -24,11 +25,10 @@ export const Container = styled.div`
 `;
 
 export const LogoContainer = styled(Link)`
-  height: 100%;
-  width: 7rem;
+  width: 12.5rem;
   padding: 2.5rem;
   @media screen and (max-width: 80rem) {
-    width: 5rem;
+    width: 10rem;
     padding: 0;
   }
 `;
@@ -53,4 +53,7 @@ export const OptionLink = styled(Link)`
     color: #ff303f;
   }
   cursor: pointer;
+  @media only screen and (max-width: 37.5em) {
+    font-size: 2.6rem;
+  }
 `;

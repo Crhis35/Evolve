@@ -1,23 +1,30 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SectionContainer = styled.section`
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 23%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  @media only screen and (max-width: 37.5em) {
+    left: 50%;
+  }
 `;
 
 export const ContentContainer = styled.div`
   position: relative;
-  padding: 10rem 5rem 10rem 15rem;
   box-sizing: border-box;
 `;
 
 export const Title = styled.h2`
-  font-family: "Titillium Web", sans-serif;
-  font-size: 3em;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 4.5em;
   color: #fff;
   font-weight: 800;
+  @media only screen and (max-width: 37.5em) {
+    font-size: 3.5rem;
+  }
 `;
 export const Paragraph = styled.p`
   font-size: 1.2em;
