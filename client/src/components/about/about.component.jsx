@@ -1,30 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-import Aos from 'aos';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import {
-  AboutSection,
-  AboutContainer,
-  AboutBlog,
-  Step,
-  NameStep,
-  NameSt,
-  ProcessItem,
-  StepDscr,
-  InnerTitle,
+  Section,
   Logan,
-} from './about.styles';
+  InnerTitle,
+  SectionContainer,
+  BtnWrapper,
+  Btn,
+} from "../base/base.components";
 
-import 'aos/dist/aos.css';
+import { AboutBlog, ProcessItem } from "./about.styles";
+
+import Road from "./road.component";
 
 const About = () => {
-  const titles = ['Planing', 'Design', 'Development', 'Start'];
+  const titles = ["Planing", "Design", "Development", "Start"];
   useEffect(() => {
     Aos.init({ duration: 2500 });
   }, []);
   return (
-    <AboutSection>
-      <AboutContainer data-aos="fade-right">
+    <Section>
+      <SectionContainer data-aos="fade-right">
         <AboutBlog>
           <InnerTitle>Building the Future.</InnerTitle>
           <Logan>
@@ -32,24 +31,21 @@ const About = () => {
             from idea to <br />
             product realization
           </Logan>
+          <BtnWrapper>
+            <Btn to="/">View Details</Btn>
+          </BtnWrapper>
         </AboutBlog>
         <AboutBlog>
           <ProcessItem>
             <ul>
               {titles.map((name, idx) => (
-                <>
-                  <Step data-aos="fade-down">{idx + 1}</Step>
-                  <NameStep data-aos="fade-left">
-                    <NameSt>{name}</NameSt>
-                    <StepDscr>Members should share the same ethos</StepDscr>
-                  </NameStep>
-                </>
+                <Road key={idx} idx={idx} name={name} />
               ))}
             </ul>
           </ProcessItem>
         </AboutBlog>
-      </AboutContainer>
-    </AboutSection>
+      </SectionContainer>
+    </Section>
   );
 };
 

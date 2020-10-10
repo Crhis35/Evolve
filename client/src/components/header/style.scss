@@ -1,0 +1,23 @@
+.tl {
+  top: 0;
+  left: 0;
+  border-radius: 2.8rem 0 0 0;
+}
+
+.tr {
+  top: 0;
+  right: 0;
+  border-radius: 0 2.8rem 0 0;
+}
+
+.bl {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 0 2.8rem;
+}
+
+.br {
+  bottom: 0;
+  right: 0;
+  border-radius: 0 0 2.8rem 0;
+}

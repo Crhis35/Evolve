@@ -1,6 +1,5 @@
 import React from "react";
 import { DirectoryContainer } from "./directory.style";
-import Header from "../header/header.component";
 
 import Landing from "../landing/landing.component";
 
@@ -16,7 +15,6 @@ const Directory = () => {
           <source src={video} type="video/mp4" />
         </video>
       </div>
-      <Header />
       <Landing />
     </DirectoryContainer>
   );

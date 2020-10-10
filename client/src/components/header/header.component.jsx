@@ -1,28 +1,31 @@
-import React from 'react';
-import { ReactComponent as Logo } from '../../assets/img/logo.svg';
-import {
-  HeaderContainer,
-  LogoContainer,
-  OptionsContainer,
-  OptionLink,
-  Container,
-} from './header.style';
+import React from "react";
+import { FloatingButton, SubButton, Navigation } from "./header.style";
+import { ReactComponent as Logo } from "../../assets/img/logo-w.svg";
 
-export const Header = () => {
-  return (
-    <HeaderContainer>
-      <Container>
-        <LogoContainer to="/">
-          <Logo />
-        </LogoContainer>
-      </Container>
-      <OptionsContainer>
-        <OptionLink to="/">Home</OptionLink>
-        <OptionLink to="/">Works</OptionLink>
-        <OptionLink to="/">About us</OptionLink>
-        <OptionLink to="/">Contact us</OptionLink>
-      </OptionsContainer>
-    </HeaderContainer>
-  );
-};
+import { LogoContainer, LogoWrapper } from "../base/base.components";
+import "./style.scss";
+
+export const Header = () => (
+  <Navigation>
+    <LogoWrapper>
+      <LogoContainer Size="8.5">
+        <Logo />
+      </LogoContainer>
+    </LogoWrapper>
+    <FloatingButton>
+      <SubButton to="/" className="tl ">
+        <i className="fas fa-home"></i>
+      </SubButton>
+      <SubButton to="/" className="tr">
+        <i className="fas fa-user-friends"></i>
+      </SubButton>
+      <SubButton to="/" className="bl">
+        <i className="fas fa-book"></i>
+      </SubButton>
+      <SubButton to="/" className="br">
+        <i className="fas fa-address-card"></i>
+      </SubButton>
+    </FloatingButton>
+  </Navigation>
+);
 export default Header;
