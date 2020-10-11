@@ -8,7 +8,7 @@ import "./style.scss";
 export const Header = () => (
   <Navigation>
     <LogoWrapper>
-      <LogoContainer Size="8.5">
+      <LogoContainer to="/" size="8.5">
         <Logo />
       </LogoContainer>
     </LogoWrapper>
@@ -19,7 +19,7 @@ export const Header = () => (
       <SubButton to="/" className="tr">
         <i className="fas fa-user-friends"></i>
       </SubButton>
-      <SubButton to="/" className="bl">
+      <SubButton to="/blog" className="bl">
         <i className="fas fa-book"></i>
       </SubButton>
       <SubButton to="/" className="br">

@@ -115,8 +115,8 @@ export const LogoContainer = styled(Link)`
     padding: 0;
   }
   & > * {
-    width: ${(props) => props.Size || "15"}rem;
-    height: ${(props) => props.Size || "15"}rem;
+    width: ${(props) => props.size || "15"}rem;
+    height: ${(props) => props.size || "15"}rem;
   }
 `;
 export const BtnWrapper = styled.div`

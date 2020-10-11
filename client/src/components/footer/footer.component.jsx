@@ -41,7 +41,7 @@ const Footer = () => {
           <Container>
             <InfoWrapper>
               <LogoWrapper>
-                <LogoContainer>
+                <LogoContainer to="/">
                   <Logo />
                 </LogoContainer>
               </LogoWrapper>
