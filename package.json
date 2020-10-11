@@ -11,7 +11,7 @@
     "server": "cd api && yarn develop",
     "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^5.3.0"
   },
   "license": "MIT"
