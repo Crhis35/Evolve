@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LastProject = styled.div`
   padding: 1.5rem 10rem;
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1554744512-d6c603f27c54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+  background-image: ${(props) => `url(${props.image})`};
   background-size: cover;
   width: 100%;
   &:before {
@@ -12,7 +12,7 @@ export const LastProject = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    content: "";
+    content: '';
     background: rgba(18, 23, 27, 0.7);
   }
 `;

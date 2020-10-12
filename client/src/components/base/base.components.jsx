@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Section = styled.section`
-  background: ${(props) => props.inputColor || "#212121"};
+  background: ${(props) => props.inputColor || '#212121'};
   padding: 8rem;
   width: 100%;
   height: 100%;
@@ -16,7 +16,7 @@ export const Slogan = styled.div`
   padding-top: 1rem;
   font-size: 4.8rem;
   font-weight: 700;
-  color: ${(props) => props.inputColor || "#212121"};
+  color: ${(props) => props.inputColor || '#212121'};
 
   @media only screen and (max-width: 56.25em) {
     font-size: 3.2rem;
@@ -41,10 +41,10 @@ export const InnerSubTitle = styled.h4`
   font-size: 1.8rem;
   position: relative;
   letter-spacing: 0.1rem;
-  font-family: "Titillium Web", sans-serif;
-  color: ${(props) => props.inputColor || "#fff"};
+  font-family: 'Titillium Web', sans-serif;
+  color: ${(props) => props.inputColor || '#fff'};
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -58,11 +58,11 @@ export const InnerTitle = styled.h2`
   font-size: 2rem;
   padding-bottom: 1rem;
   font-weight: 400;
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   letter-spacing: 0.5rem;
-  color: ${(props) => props.inputColor || "#fff"};
+  color: ${(props) => props.inputColor || '#fff'};
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -83,7 +83,7 @@ export const InnerTitle = styled.h2`
 `;
 
 export const Logan = styled.div`
-  color: ${(props) => props.inputColor || "#fff"};
+  color: ${(props) => props.inputColor || '#fff'};
   font-size: 4.8rem;
   font-weight: 700;
   margin-bottom: 4rem;
@@ -94,7 +94,7 @@ export const SectionContainer = styled.div`
   height: 100%;
   padding-top: 2.5rem;
   display: flex;
-  flex-direction: ${(props) => props.directionFlow || "row"};
+  flex-direction: ${(props) => props.directionFlow || 'row'};
   justify-content: space-around;
   align-items: center;
 
@@ -115,8 +115,8 @@ export const LogoContainer = styled(Link)`
     padding: 0;
   }
   & > * {
-    width: ${(props) => props.size || "15"}rem;
-    height: ${(props) => props.size || "15"}rem;
+    width: ${(props) => props.size || '15'}rem;
+    height: ${(props) => props.size || '15'}rem;
   }
 `;
 export const BtnWrapper = styled.div`
@@ -134,9 +134,26 @@ export const Btn = styled(Link)`
   font-weight: 700;
   color: #fff;
   box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.7);
-  font-family: "Droid Sans", sans-serif;
+  font-family: 'Droid Sans', sans-serif;
   letter-spacing: 0.1rem;
 
+  &:hover {
+    background: #ff747d;
+  }
+`;
+export const BtnButton = styled.button`
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  text-transform: uppercase;
+  border-radius: 2px;
+  position: relative;
+  background: #ff303f;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.7);
+  font-family: 'Droid Sans', sans-serif;
+  letter-spacing: 0.1rem;
+  border: none;
   &:hover {
     background: #ff747d;
   }

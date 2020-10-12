@@ -1,9 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { InnerSubTitle, Paragraph } from "../base/base.components";
-import { CardItem, Text, Name, List, ListItem } from "./services.styles";
+import { InnerSubTitle, Paragraph } from '../base/base.components';
+import { CardItem, Text, Name, List, ListItem } from './services.styles';
 
-const Card = ({ name }) => {
+const Card = ({ name, history, match, routeName }) => {
+  console.log(match);
+  console.log(routeName);
+  console.log(history);
   return (
     <CardItem>
       <Name>

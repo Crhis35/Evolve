@@ -1,23 +1,14 @@
-import React from "react";
-import { gql } from "@apollo/client";
-import Query from "../../components/Query";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import BlogPage from '../../components/blog-page/blog.page.component';
+import BlogOverview from '../../components/blog-overview/blog.overview';
 
-const ALL_BLOGS = gql`
-  query posts {
-    posts {
-      id
-    }
-  }
-`;
-
-const Blog = () => {
+const Blog = ({ match }) => {
   return (
-    <Query query={ALL_BLOGS} id={null}>
-      {({ data }) => {
-        console.log(data);
-        return <div>Hi</div>;
-      }}
-    </Query>
+    <>
+      <Route exact path={`${match.path}`} component={BlogPage} />
+      <Route path={`${match.path}/:blogId`} component={BlogOverview} />
+    </>
   );
 };
 

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import Aos from "aos";
+import Aos from 'aos';
 
-import "aos/dist/aos.css";
+import 'aos/dist/aos.css';
 
 import {
   Row,
@@ -10,8 +10,8 @@ import {
   InnerTitle,
   Section,
   Slogan,
-} from "../base/base.components";
-import Card from "./card.component";
+} from '../base/base.components';
+import Card from './card.component';
 // import { CardItem, Text, Name, List, ListItem,LastProject,ProjectWrapper, } from "./services.styles";
 
 const Services = () => {
@@ -19,7 +19,7 @@ const Services = () => {
     Aos.init({ duration: 2500 });
   }, []);
 
-  const names = ["Machine Learning", "IoT", "Web Development"];
+  const names = ['Machine Learning', 'IoT', 'Web Development'];
 
   return (
     <Section inputColor="#fff">
