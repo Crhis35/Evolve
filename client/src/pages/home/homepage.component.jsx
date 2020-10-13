@@ -1,21 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { gql } from '@apollo/client';
 
-import { HomePageContainer } from './homepage.styles';
 import Directoy from '../../components/directory/directory.component';
 import About from '../../components/about/about.component';
 import Services from '../../components/services/services.component';
-
 import Project from '../../components/project/project.component';
 
-const HomePage = () => {
-  const url =
-    'https://images.unsplash.com/photo-1554744512-d6c603f27c54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80';
+import Query from '../../components/Query';
+
+import { HomePageContainer } from './homepage.styles';
+
+const LAST_PROJECT = gql`
+  query posts($sort: String, $start: Int, $limit: Int) {
+    posts(sort: $sort, start: $start, limit: $limit) {
+      id
+      title
+      image {
+        url
+      }
+    }
+  }
+`;
+
+const HomePage = ({ ...otherProps }) => {
+  useEffect(() => {}, []);
   return (
     <HomePageContainer>
       <Directoy />
       <About />
       <Services />
-      <Project image={url} title={'Last Project'} uid={'blog'} />
+      <Query query={LAST_PROJECT} sort={'createdAt:DESC'} limit={1}>
+        {({ data: { posts } }) => {
+          const { id, image, title } = posts[0];
+          const imageUrl =
+            process.env.NODE_ENV !== 'development'
+              ? image[0].url
+              : process.env.REACT_APP_BACKEND_URL + image[0].url;
+          return (
+            <Project image={imageUrl} title={title} id={id} {...otherProps} />
+          );
+        }}
+      </Query>
     </HomePageContainer>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Project from './project.component';
 
@@ -11,20 +11,25 @@ import {
 
 import './styles.scss';
 
-const ProjectContainer = ({ posts, fetchMore }) => {
+const ProjectContainer = ({ posts, fetchMore, ...otherProps }) => {
+  useEffect(() => {}, []);
   return (
     <>
       <Section>
         <InnerTitle>Blogs</InnerTitle>
       </Section>
-      {posts.map(({ id, title, uid, image }) => {
-        const imageUrl = image[0].url;
+      {posts.map(({ id, title, image }) => {
+        const imageUrl =
+          process.env.NODE_ENV !== 'development'
+            ? image[0].url
+            : process.env.REACT_APP_BACKEND_URL + image[0].url;
         return (
           <Project
             key={id}
             title={title}
-            uid={uid}
-            image={`${process.env.REACT_APP_BACKEND_URL}${imageUrl}`}
+            id={id}
+            image={`${imageUrl}`}
+            {...otherProps}
           />
         );
       })}
@@ -33,12 +38,7 @@ const ProjectContainer = ({ posts, fetchMore }) => {
           onClick={() =>
             fetchMore({
               variables: {
-                start: posts.length,
-                limit: 5,
-              },
-              updateQuery: (prev, { fetchMoreResult }) => {
-                if (!fetchMoreResult) return prev;
-                return { posts: [...prev.posts, ...fetchMoreResult.posts] };
+                limit: posts.length + 5,
               },
             })
           }

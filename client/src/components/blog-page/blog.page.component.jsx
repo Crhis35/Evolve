@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { gql } from '@apollo/client';
 
 import Query from '../../components/Query';
 import ProjectContainer from '../project/project.container';
 
 const ALL_BLOGS = gql`
-  query posts($start: Int, $limit: Int) {
-    posts(start: $start, limit: $limit) {
+  query posts($sort: String, $start: Int, $limit: Int) {
+    posts(sort: $sort, start: $start, limit: $limit) {
       id
       uid
       title
@@ -17,8 +17,15 @@ const ALL_BLOGS = gql`
   }
 `;
 const BlogPage = ({ ...otherProps }) => {
+  useEffect(() => {}, []);
   return (
-    <Query query={ALL_BLOGS} id={null} start={0} limit={5}>
+    <Query
+      query={ALL_BLOGS}
+      id={null}
+      start={0}
+      limit={5}
+      sort={'createdAt:DESC'}
+    >
       {({ data, fetchMore }) => {
         return (
           <ProjectContainer

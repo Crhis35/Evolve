@@ -1,6 +1,16 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
-const cache = new InMemoryCache();
+import { offsetLimitPagination } from '@apollo/client/utilities';
+
+const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        posts: offsetLimitPagination(),
+      },
+    },
+  },
+});
 
 const client = new ApolloClient({
   cache,

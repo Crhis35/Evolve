@@ -3,10 +3,7 @@ import React from 'react';
 import { InnerSubTitle, Paragraph } from '../base/base.components';
 import { CardItem, Text, Name, List, ListItem } from './services.styles';
 
-const Card = ({ name, history, match, routeName }) => {
-  console.log(match);
-  console.log(routeName);
-  console.log(history);
+const Card = ({ name }) => {
   return (
     <CardItem>
       <Name>

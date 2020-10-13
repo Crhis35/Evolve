@@ -6,10 +6,11 @@ import 'aos/dist/aos.css';
 import { InnerTitle, Slogan, Btn, BtnWrapper } from '../base/base.components';
 import { LastProject, ProjectWrapper } from './project.styles';
 
-const Project = ({ title, uid, image }) => {
+const Project = ({ title, id, image }) => {
   useEffect(() => {
     Aos.init({ duration: 2500 });
   }, []);
+
   return (
     <LastProject image={image}>
       <ProjectWrapper data-aos="fade-up">
@@ -18,7 +19,7 @@ const Project = ({ title, uid, image }) => {
           We have Developed <br /> an AI
         </Slogan>
         <BtnWrapper>
-          <Btn to={`/${uid}`}>View Details</Btn>
+          <Btn to={`blog/${id}`}>View Details</Btn>
         </BtnWrapper>
       </ProjectWrapper>
     </LastProject>

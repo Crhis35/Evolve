@@ -2,12 +2,10 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import Spinner from '../spinner/spinner.component';
 
-const Query = ({ children, query, id, start, limit }) => {
+const Query = ({ children, query, id, start, limit, sort }) => {
   const { data, loading, error, fetchMore } = useQuery(query, {
-    variables: { id, start, limit },
-    fetchPolicy: 'cache-and-network',
+    variables: { id, start, limit, sort },
   });
-
   if (loading) return <Spinner />;
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
 

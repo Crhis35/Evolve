@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { GlobalStyle } from "./global.styles";
-import { Switch, Route } from "react-router-dom";
+import { GlobalStyle } from './global.styles';
+import { Switch, Route } from 'react-router-dom';
 
-import HomePage from "./pages/home/homepage.component";
-import Header from "./components/header/header.component";
-import Footer from "./components/footer/footer.component";
-import Blog from "./pages/blog/blog.component";
+import HomePage from './pages/home/homepage.component';
+import Header from './components/header/header.component';
+import Footer from './components/footer/footer.component';
+import Blog from './pages/blog/blog.page';
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/blog" component={Blog} />
+        <Route path="/blog" component={Blog} />
       </Switch>
       <Footer />
     </div>
