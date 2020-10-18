@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "name": "HomePage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "About": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about.about"
+    },
+    "Directory": {
+      "type": "component",
+      "repeatable": false,
+      "component": "directory.video"
+    }
+  }
+}

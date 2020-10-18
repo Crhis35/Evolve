@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_component_videos",
+  "info": {
+    "name": "Video",
+    "icon": "video"
+  },
+  "options": {},
+  "attributes": {
+    "video_landing": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

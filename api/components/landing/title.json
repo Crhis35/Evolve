@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_landing_titles",
+  "info": {
+    "name": "title",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "titles": {
+      "type": "component",
+      "repeatable": false,
+      "component": "fonts.3-titles"
+    }
+  }
+}

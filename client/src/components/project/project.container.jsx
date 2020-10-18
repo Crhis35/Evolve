@@ -18,7 +18,7 @@ const ProjectContainer = ({ posts, fetchMore, ...otherProps }) => {
       <Section>
         <InnerTitle>Blogs</InnerTitle>
       </Section>
-      {posts.map(({ id, title, image }) => {
+      {posts.map(({ id, title, image, description }) => {
         const imageUrl =
           process.env.NODE_ENV !== 'development'
             ? image[0].url
@@ -29,6 +29,7 @@ const ProjectContainer = ({ posts, fetchMore, ...otherProps }) => {
             title={title}
             id={id}
             image={`${imageUrl}`}
+            description={description}
             {...otherProps}
           />
         );

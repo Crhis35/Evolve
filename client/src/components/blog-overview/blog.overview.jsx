@@ -8,6 +8,15 @@ const BLOG_BY_ID = gql`
   query post($id: ID!) {
     post(id: $id) {
       title
+      description
+      content
+      image {
+        url
+      }
+      published_at
+      categories {
+        title
+      }
     }
   }
 `;

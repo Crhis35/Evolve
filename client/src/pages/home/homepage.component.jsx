@@ -15,6 +15,7 @@ const LAST_PROJECT = gql`
     posts(sort: $sort, start: $start, limit: $limit) {
       id
       title
+      description
       image {
         url
       }
@@ -31,13 +32,20 @@ const HomePage = ({ ...otherProps }) => {
       <Services />
       <Query query={LAST_PROJECT} sort={'createdAt:DESC'} limit={1}>
         {({ data: { posts } }) => {
-          const { id, image, title } = posts[0];
+          const { id, image, title, description } = posts[0];
           const imageUrl =
             process.env.NODE_ENV !== 'development'
               ? image[0].url
               : process.env.REACT_APP_BACKEND_URL + image[0].url;
           return (
-            <Project image={imageUrl} title={title} id={id} {...otherProps} />
+            <Project
+              home={true}
+              image={imageUrl}
+              title={title}
+              id={id}
+              description={description}
+              {...otherProps}
+            />
           );
         }}
       </Query>

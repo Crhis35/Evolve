@@ -34,6 +34,9 @@ export const Row = styled.div`
 export const Paragraph = styled.p`
   line-height: 1.8;
   font-size: 1.4rem;
+  @media only screen and (max-width: 56.25em) {
+    font-size: 1.8rem;
+  }
 `;
 export const InnerSubTitle = styled.h4`
   font-weight: bold;

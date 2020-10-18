@@ -1,20 +1,50 @@
-import React from "react";
-import { DirectoryContainer } from "./directory.style";
+import React from 'react';
 
-import Landing from "../landing/landing.component";
+import { gql } from '@apollo/client';
 
-import video from "../../assets/videos/keyboard.mp4";
+import { DirectoryContainer } from './directory.style';
 
-import "./directory.style.scss";
+import Landing from '../landing/landing.component';
+
+import './directory.style.scss';
+import Query from '../Query';
+
+const GET_VIDEO = gql`
+  query homePage {
+    homePage {
+      Directory {
+        video_landing {
+          url
+        }
+      }
+    }
+  }
+`;
 
 const Directory = () => {
+  const videoUrl =
+    process.env.NODE_ENV !== 'development'
+      ? ''
+      : process.env.REACT_APP_BACKEND_URL;
   return (
     <DirectoryContainer>
-      <div className="bg-video">
-        <video className="bg-video__content" autoPlay muted loop>
-          <source src={video} type="video/mp4" />
-        </video>
-      </div>
+      <Query query={GET_VIDEO}>
+        {({
+          data: {
+            homePage: {
+              Directory: {
+                video_landing: { url },
+              },
+            },
+          },
+        }) => (
+          <div className="bg-video">
+            <video className="bg-video__content" autoPlay muted loop>
+              <source src={videoUrl + url} type="video/mp4" />
+            </video>
+          </div>
+        )}
+      </Query>
       <Landing />
     </DirectoryContainer>
   );

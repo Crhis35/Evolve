@@ -8,8 +8,8 @@ const ALL_BLOGS = gql`
   query posts($sort: String, $start: Int, $limit: Int) {
     posts(sort: $sort, start: $start, limit: $limit) {
       id
-      uid
       title
+      description
       image {
         url
       }
@@ -19,13 +19,7 @@ const ALL_BLOGS = gql`
 const BlogPage = ({ ...otherProps }) => {
   useEffect(() => {}, []);
   return (
-    <Query
-      query={ALL_BLOGS}
-      id={null}
-      start={0}
-      limit={5}
-      sort={'createdAt:DESC'}
-    >
+    <Query query={ALL_BLOGS} limit={5} sort={'createdAt:DESC'}>
       {({ data, fetchMore }) => {
         return (
           <ProjectContainer

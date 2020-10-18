@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_fonts_3_titles",
+  "info": {
+    "name": "3_titles",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "title1": {
+      "type": "string"
+    },
+    "title2": {
+      "type": "string"
+    },
+    "title3": {
+      "type": "string"
+    }
+  }
+}

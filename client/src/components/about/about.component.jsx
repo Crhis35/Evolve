@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import Aos from "aos";
-import "aos/dist/aos.css";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import {
   Section,
@@ -10,14 +10,14 @@ import {
   SectionContainer,
   BtnWrapper,
   Btn,
-} from "../base/base.components";
+} from '../base/base.components';
 
-import { AboutBlog, ProcessItem } from "./about.styles";
+import { AboutBlog, ProcessItem } from './about.styles';
 
-import Road from "./road.component";
+import Road from './road.component';
 
 const About = () => {
-  const titles = ["Planing", "Design", "Development", "Start"];
+  const titles = ['Planing', 'Design', 'Development', 'Start'];
   useEffect(() => {
     Aos.init({ duration: 2500 });
   }, []);

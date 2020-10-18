@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 import { InnerTitle, Slogan, Btn, BtnWrapper } from '../base/base.components';
 import { LastProject, ProjectWrapper } from './project.styles';
 
-const Project = ({ title, id, image }) => {
+const Project = ({ title, id, image, home, description }) => {
   useEffect(() => {
     Aos.init({ duration: 2500 });
   }, []);
@@ -14,10 +14,8 @@ const Project = ({ title, id, image }) => {
   return (
     <LastProject image={image}>
       <ProjectWrapper data-aos="fade-up">
-        <InnerTitle>{title}</InnerTitle>
-        <Slogan inputColor="#fff">
-          We have Developed <br /> an AI
-        </Slogan>
+        <InnerTitle>{home ? `Last Project | ${title}` : title}</InnerTitle>
+        <Slogan inputColor="#fff">{description}</Slogan>
         <BtnWrapper>
           <Btn to={`blog/${id}`}>View Details</Btn>
         </BtnWrapper>
