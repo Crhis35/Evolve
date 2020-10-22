@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { gql } from '@apollo/client';
 
 import Query from '../../components/Query';
@@ -17,7 +17,6 @@ const ALL_BLOGS = gql`
   }
 `;
 const BlogPage = ({ ...otherProps }) => {
-  useEffect(() => {}, []);
   return (
     <Query query={ALL_BLOGS} limit={5} sort={'createdAt:DESC'}>
       {({ data, fetchMore }) => {

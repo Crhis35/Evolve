@@ -10,7 +10,6 @@ const Query = ({ children, query, id, start, limit, sort, config }) => {
   });
   if (loading) return <Spinner />;
   if (error) return <ErrorComponent />;
-
   return children({ data, fetchMore });
 };
 

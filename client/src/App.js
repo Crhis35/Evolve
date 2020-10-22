@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 
 import { GlobalStyle } from './global.styles';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from './pages/home/homepage.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
-import Blog from './pages/blog/blog.page';
+import Spinner from './components/spinner/spinner.component';
+const HomePage = lazy(() => import('./pages/home/homepage.component'));
+const Blog = lazy(() => import('./pages/blog/blog.page'));
 
 const App = () => {
   return (
@@ -14,8 +15,10 @@ const App = () => {
       <GlobalStyle />
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/blog" component={Blog} />
+        <Suspense fallback={<Spinner />}>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/blog" component={Blog} />
+        </Suspense>
       </Switch>
       <Footer />
     </div>
