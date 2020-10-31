@@ -33,10 +33,7 @@ const HomePage = ({ ...otherProps }) => {
       <Query query={LAST_PROJECT} sort={'createdAt:DESC'} limit={1}>
         {({ data: { posts } }) => {
           const { id, image, title, description } = posts[0];
-          const imageUrl =
-            process.env.NODE_ENV !== 'development'
-              ? image[0].url
-              : process.env.REACT_APP_BACKEND_URL + image[0].url;
+          const imageUrl = image[0].url;
           return (
             <Project
               home={true}

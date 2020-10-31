@@ -14,7 +14,7 @@ const cache = new InMemoryCache({
 
 const client = new ApolloClient({
   cache,
-  uri: `${process.env.REACT_APP_BACKEND_URL}/graphql`,
+  uri: 'https://fathomless-brook-13052.herokuapp.com/graphql',
 });
 
 export default client;

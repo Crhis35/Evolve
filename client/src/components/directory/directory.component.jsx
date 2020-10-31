@@ -22,10 +22,6 @@ const GET_VIDEO = gql`
 `;
 
 const Directory = () => {
-  const videoUrl =
-    process.env.NODE_ENV !== 'development'
-      ? ''
-      : process.env.REACT_APP_BACKEND_URL;
   return (
     <DirectoryContainer>
       <Query query={GET_VIDEO}>
@@ -40,7 +36,7 @@ const Directory = () => {
         }) => (
           <div className="bg-video">
             <video className="bg-video__content" autoPlay muted loop>
-              <source src={videoUrl + url} type="video/mp4" />
+              <source src={url} type="video/mp4" />
             </video>
           </div>
         )}
